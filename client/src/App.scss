@@ -1,0 +1,189 @@
+// Default Button
+
+.Button {
+    color: white;
+    background-color: var(--red);
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0.7em 3em;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: 0.5s;
+
+    &:hover {
+        color: black;
+        background-color: transparent;
+        border: 2px solid black;
+    }
+}
+
+
+// Default Button
+
+.BorderButton {
+    color: white;
+    background-color: var(--red);
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0.7em 3em;
+    border: 2px solid white;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: 0.5s;
+
+    &:hover {
+        color: black;
+        background-color: transparent;
+        border: 2px solid black;
+    }
+}
+
+// Default Transparent Button
+
+.TransparentButton {
+    color: white;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0.7em 1em;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: 0.5s;
+
+    &:hover {
+        color: black;
+        background-color: var(--red);
+        border: 2px solid transparent;
+    }
+}
+
+// Default Button 2
+
+.Button2 {
+    color: white;
+    background-color: var(--red);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0.5em 2.5em;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: 0.5s;
+
+    &:hover {
+        color: black;
+        background-color: transparent;
+        border: 2px solid black;
+    }
+}
+
+
+// Border Button 2
+
+.BorderButton2 {
+    color: white;
+    background-color: var(--red);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0.5em 2.5em;
+    border: 2px solid white;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: 0.5s;
+
+    &:hover {
+        color: black;
+        background-color: transparent;
+        border: 2px solid black;
+    }
+}
+
+
+// Product Button
+
+.ProductButton {
+    color: white;
+    background-color: var(--red);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0.5em 2.5em;
+    border: 2px solid transparent;
+    letter-spacing: 1px;
+    transition: 0.5s;
+
+    &:hover {
+        color: black;
+        background-color: black;
+        border: 2px solid transparent;
+    }
+}
+
+
+// Paginaton Button
+
+.PaginationButton {
+    width: 3em;
+    aspect-ratio: 1/1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 1em;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.5s;
+
+    &:hover {
+        color: var(--white);
+        background-color: var(--red);
+        border: 2px solid transparent;
+    }
+}
+
+
+
+// Navbar Button
+
+.NavButton {
+    color: white;
+    background-color: var(--red);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0.5em 2em;
+    border: 2px solid white;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: 0.5s;
+
+    &:hover {
+        color: black;
+        background-color: transparent;
+        border: 2px solid black;
+    }
+}
+
+// HeaderHolder
+
+#HeaderHolder{
+    position: sticky;
+    top: 0;
+    z-index: 15;
+}
+
+
+// Selection
+
+.selectionText {
+
+    &::selection {
+        background-color: var(--red);
+        color: #fff;
+    }
+}

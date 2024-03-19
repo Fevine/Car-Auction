@@ -1,0 +1,628 @@
+#Navbar {
+    background-color: #eaeaea;
+    z-index: 15;
+    height: 72px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 0 2em;
+    display: flex;
+    align-items: center;
+
+    .container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .lSide {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            column-gap: 3em;
+
+            .imgBox {
+                max-width: 120px;
+            }
+
+            .navList {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                column-gap: 2.5em;
+
+                li {
+                    height: 100%;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    .NavLink {
+                        inline-size: max-content;
+                        height: 100%;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        column-gap: 0.5em;
+                        font-weight: 600;
+                        transition: 0.3s;
+
+                        .text {
+                            cursor: pointer;
+                            color: inherit;
+                        }
+
+                        &:hover {
+                            color: var(--red);
+                        }
+
+                        &:global.active {
+                            color: var(--red);
+                        }
+                    }
+
+                    .subNav {
+                        visibility: hidden;
+                        opacity: 0;
+                        transform: scale(0);
+                        background-color: white;
+                        word-break: keep-all;
+                        min-width: calc(100% + 70px);
+                        line-height: 2em;
+                        padding: 1.5em;
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 0.5em;
+                        border-radius: 6px;
+                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                        position: absolute;
+                        top: 97%;
+                        left: 0;
+                        transition: 0.3s;
+
+                        li {
+
+                            .NavLink {
+                                inline-size: max-content;
+                                height: 100%;
+                                cursor: pointer;
+                                display: flex;
+                                align-items: center;
+                                font-weight: 500;
+                                font-size: 15px;
+                                transition: 0.4s;
+
+                                .text {
+                                    margin-left: 0.5em;
+                                }
+
+                                &:hover {
+                                    color: var(--red);
+                                }
+
+                                &:global.active {
+                                    color: var(--red);
+                                }
+                            }
+                        }
+                    }
+
+                    .platform {
+                        left: -250px !important;
+                        overflow: hidden;
+                        padding: unset;
+                        display: flex;
+                        flex-direction: row;
+                        transition: 0.5s !important;
+
+                        .list {
+                            padding: 1.5em;
+                            width: 50%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+
+                            .subListHead {
+                                word-break: keep-all;
+                                font-size: 20px;
+                                font-weight: 700;
+                                margin-bottom: 1em;
+                            }
+
+                            .subListItem {
+                                cursor: pointer;
+                                display: flex;
+                                align-items: center;
+                                column-gap: 0.5em;
+                                transition: 0.3s;
+
+                                .listImgBox {
+                                    width: 20px;
+                                }
+
+                                .listText {
+                                    color: #000;
+                                    cursor: pointer;
+                                    inline-size: max-content;
+                                    font-size: 15px;
+                                    font-weight: 500px;
+                                }
+
+                                &:hover {
+
+                                    .listText {
+                                        color: var(--red);
+                                    }
+                                }
+                            }
+                        }
+
+                        .subImgBox {
+                            width: 800px;
+                            height: 100%;
+                            position: relative;
+
+                            .textBox {
+                                width: 50%;
+                                height: 100%;
+                                padding-left: 2em;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: flex-start;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+
+                                .auctionLot{
+                                    color: #fff;
+                                }
+
+                                .checkit {
+                                    color: #fff;
+                                    margin-bottom: 2em;
+                                }
+
+                                .viewBtn {
+                                    color: white;
+                                    background-color: var(--red);
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    padding: 0.5em 2.5em;
+                                    border: 2px solid transparent;
+                                    border-radius: 4px;
+                                    letter-spacing: 1px;
+                                    transition: 0.5s;
+                                
+                                    &:hover {
+                                        color: #fff;
+                                        background-color: transparent;
+                                        border: 2px solid #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+
+                        .subNav {
+                            visibility: visible;
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .rSide {
+            display: flex;
+            align-items: center;
+            column-gap: 1em;
+
+            .NavLink {
+                font-weight: 600;
+                transition: 0.3s;
+
+                &:global.active {
+                    color: var(--red);
+                }
+            }
+
+            .cart {
+                font-size: 20px;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover {
+                    color: var(--red);
+                }
+            }
+
+            .user,
+            .heart,
+            .toggle,
+            .magnify {
+                font-size: 20px;
+                cursor: pointer;
+                display: none;
+                transition: 0.3s;
+
+                &:hover {
+                    color: var(--red);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    #Navbar {
+        position: relative;
+        height: 72px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 0 2em;
+        display: flex;
+        align-items: center;
+
+        .container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .lSide {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                column-gap: 3em;
+
+                .imgBox {
+                    max-width: 120px;
+                }
+
+                .navList {
+                    font-size: 15px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1.7em;
+
+                    li {
+                        height: 100%;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+
+                        .NavLink {
+                            inline-size: max-content;
+                            height: 100%;
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            column-gap: 0.5em;
+                            font-weight: 600;
+                            transition: 0.3s;
+    
+                            .text {
+                                color: inherit;
+                            }
+
+                            &:hover {
+                                color: var(--red);
+                            }
+
+                            &:global.active {
+                                color: var(--red);
+                            }
+                        }
+
+                        .subNav {
+                            visibility: hidden;
+                            opacity: 0;
+                            background-color: white;
+                            word-break: keep-all;
+                            min-width: calc(100% + 70px);
+                            line-height: 2em;
+                            padding: 1.5em;
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 0.5em;
+                            border-radius: 6px;
+                            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                            position: absolute;
+                            top: 97%;
+                            left: 0;
+                            transition: 0.3s;
+
+                            li {
+
+                                .NavLink {
+                                    inline-size: max-content;
+                                    height: 100%;
+                                    cursor: pointer;
+                                    display: flex;
+                                    align-items: center;
+                                    font-weight: 500;
+                                    font-size: 15px;
+                                    transition: 0.3s;
+
+                                    .text {
+                                        margin-left: 0.5em;
+                                    }
+
+                                    &:hover {
+                                        color: var(--red);
+                                    }
+
+                                    &:global.active {
+                                        color: var(--red);
+                                    }
+                                }
+                            }
+                        }
+
+                        .platform {
+                            overflow: hidden;
+                            padding: unset;
+                            display: flex;
+                            flex-direction: row;
+
+                            .list {
+                                padding: 1.5em;
+                                width: 50%;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+
+                                .subListHead {
+                                    word-break: keep-all;
+                                    font-size: 20px;
+                                    font-weight: 700;
+                                    margin-bottom: 1em;
+                                }
+
+                                .subListItem {
+                                    cursor: pointer;
+                                    display: flex;
+                                    align-items: center;
+                                    column-gap: 0.5em;
+                                    transition: 0.3s;
+
+                                    .listImgBox {
+                                        width: 20px;
+                                    }
+
+                                    .listText {
+                                        inline-size: max-content;
+                                        font-size: 15px;
+                                        font-weight: 500px;
+                                    }
+
+                                    &:hover {
+
+                                        .listText {
+                                            color: var(--red);
+                                        }
+                                    }
+                                }
+                            }
+
+                            .subImgBox {
+                                width: 800px;
+                                height: 100%;
+                                position: relative;
+
+                                .textBox {
+                                    width: 50%;
+                                    height: 100%;
+                                    padding-left: 2em;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: flex-start;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+
+                                    .checkit {
+                                        margin-bottom: 2em;
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover {
+
+                            .subNav {
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .rSide {
+                display: flex;
+                align-items: center;
+                column-gap: 0.5em;
+
+                .NavLink {
+                    font-weight: 600;
+                    transition: 0.3s;
+
+                    &:global.active {
+                        color: var(--red);
+                    }
+                }
+
+                .cart {
+                    font-size: 20px;
+                    cursor: pointer;
+                    transition: 0.3s;
+    
+                    &:hover {
+                        color: var(--red);
+                    }
+                }
+
+                .user,
+                .heart,
+                .toggle,
+                .magnify {
+                    font-size: 20px;
+                    cursor: pointer;
+                    display: none;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: var(--red);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+    #Navbar {
+        height: 72px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 0 2em;
+        display: flex;
+        align-items: center;
+
+        .container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .lSide {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                column-gap: 3em;
+
+                .imgBox {
+                    max-width: 120px;
+                }
+
+                .navList {
+                    display: none;
+                }
+            }
+
+            .rSide {
+                display: flex;
+                align-items: center;
+                column-gap: 1em;
+
+                .NavLink {
+                    font-size: 20px;
+                    font-weight: 600;
+                    transition: 0.3s;
+
+                    &:global.active {
+                        color: var(--red);
+                    }
+                }
+
+                .user,
+                .heart,
+                .cart,
+                .toggle,
+                .magnify {
+                    font-size: 20px;
+                    cursor: pointer;
+                    display: block;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: var(--red);
+                    }
+                }
+
+                .button {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    #Navbar {
+        height: 72px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 0 1em;
+        display: flex;
+        align-items: center;
+
+        .container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .lSide {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                column-gap: 3em;
+
+                .imgBox {
+                    max-width: 90px;
+                }
+
+                .navList {
+                    display: none;
+                }
+            }
+
+            .rSide {
+                display: flex;
+                align-items: center;
+                column-gap: 0.5em;
+
+                .NavLink {
+                    font-weight: 600;
+                    transition: 0.3s;
+
+                    &:global.active {
+                        color: var(--red);
+                    }
+                }
+
+                .user,
+                .heart,
+                .cart,
+                .toggle,
+                .magnify {
+                    font-size: 15px;
+                    cursor: pointer;
+                    display: block;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: var(--red);
+                    }
+                }
+
+                .button {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}

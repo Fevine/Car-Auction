@@ -1,0 +1,212 @@
+#Header {
+    background-color: #eaeaea;
+    padding: 0 2em;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .lSide {
+            display: flex;
+            align-items: center;
+
+            .phone,
+            .email,
+            .openTime {
+                border-left: 1px solid black;
+                padding: 0.7em 1em;
+                font-size: 15px;
+                color: var(--grey);
+                display: flex;
+                align-items: center;
+                column-gap: 1em;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1em;
+                    transition: 0.3s;
+
+                    .text {
+                        cursor: pointer;
+                        transition: 0.3s;
+                    }
+                }
+
+                &:hover {
+                    a .text {
+                        color: var(--red);
+                    }
+                }
+            }
+
+            .openTime {
+                color: var(--darkGrey);
+                cursor: default;
+                border-right: 1px solid black;
+            }
+        }
+
+        .rSide {
+            display: flex;
+            align-items: center;
+
+            .search,
+            .language,
+            .signIn {
+                border-right: 1px solid black;
+                padding: 0.7em 1em;
+                font-size: 15px;
+                color: var(--grey);
+                display: flex;
+                align-items: center;
+                column-gap: 1em;
+                transition: 0.3s;
+
+            }
+
+            .search {
+                border-left: 1px solid black;
+
+                .magnify {
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: var(--red);
+                    }
+                }
+            }
+
+            .language {
+                cursor: pointer;
+            }
+
+            .signIn {
+                color: var(--darkGrey);
+                display: flex;
+
+                &:hover {
+                    color: var(--red);
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:1200px) {
+    #Header {
+        padding: 0 2em;
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .lSide {
+                display: flex;
+                align-items: center;
+
+                .phone,
+                .email,
+                .openTime {
+                    border-left: 1px solid black;
+                    padding: 0.7em 1em;
+                    font-size: 15px;
+                    color: var(--grey);
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1em;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1em;
+                        transition: 0.3s;
+
+                        .text {
+                            transition: 0.3s;
+                        }
+                    }
+
+                    &:hover {
+                        a .text {
+                            color: var(--red);
+                        }
+                    }
+                }
+
+                .openTime {
+                    cursor: default;
+                    border-right: 1px solid black;
+                }
+            }
+
+            .rSide {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:720px) {
+    #Header {
+        padding: 0 1em;
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .lSide {
+                display: flex;
+                align-items: center;
+
+                .phone,
+                .email,
+                .openTime {
+                    border-left: 0px;
+                    padding: 0.7em 0.5em;
+                    font-size: 13px;
+                    color: var(--grey);
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1em;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1em;
+                        transition: 0.3s;
+
+                        .text {
+                            display: none;
+                            transition: 0.3s;
+                        }
+                    }
+
+                    &:hover {
+                        a .text {
+                            color: var(--red);
+                        }
+                    }
+                }
+
+                .openTime {
+                    cursor: default;
+                    border-right: 0px;
+                }
+            }
+
+            .rSide {
+                display: none;
+            }
+        }
+    }
+}
+
+.displayNone{
+    display: none;
+}
