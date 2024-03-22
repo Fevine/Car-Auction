@@ -4,8 +4,11 @@ import { Helmet } from "react-helmet-async";
 import MailBox from '../../Layouts/Home Layouts/Mail Box';
 import PageTitle from '../../Components/Common Components/PageTitle';
 import Question from '../../Components/FAQ Question';
+import { useQuery } from '../../Context/queryContext';
 
 function FAQPage() {
+
+    const { Queries, setQueries, isLoading } = useQuery()
 
     const [currentQuestion, setCurrentQuestion] = React.useState(0)
 
@@ -19,8 +22,9 @@ function FAQPage() {
                 <PageTitle title={"FAQ"} />
 
                 <div className={style.container}>
-                    <Question questionOrder={1} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} question={'Test'} >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis recusandae laudantium minima iure dolores consequuntur in, laborum odit nemo fugit dolor nihil porro ea ut, ratione commodi? Molestias vero exercitationem quam assumenda repellendus, delectus rem eaque quidem, laborum, nostrum harum nam ab! Dolore, earum ab placeat velit ipsam harum architecto.</Question>
-                    <Question questionOrder={2} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} question={'Test'} >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis recusandae laudantium minima iure dolores consequuntur in, laborum odit nemo fugit dolor nihil porro ea ut, ratione commodi? Molestias vero exercitationem quam assumenda repellendus, delectus rem eaque quidem, laborum, nostrum harum nam ab! Dolore, earum ab placeat velit ipsam harum architecto.</Question>
+                    {isLoading ? <span>Loading...</span> : Queries.map((query, i) => (
+                        <Question key={query._id} questionOrder={i + 1} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} question={query.question} >{query.answer}</Question>
+                    ))}
                 </div>
 
                 <MailBox />

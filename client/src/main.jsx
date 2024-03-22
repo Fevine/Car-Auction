@@ -7,6 +7,7 @@ import { UserProvider } from './Context/userContext.jsx';
 import './index.scss';
 import { ProductProvider } from './Context/productContext.jsx';
 import { ShopFilterProvider } from './Context/shopFiltersContext.jsx';
+import { QueryProvider } from './Context/queryContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -14,7 +15,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <UserProvider>
         <ProductProvider>
           <ShopFilterProvider>
-            <App />
+            <QueryProvider>
+              <App />
+            </QueryProvider>
           </ShopFilterProvider>
         </ProductProvider>
       </UserProvider>
