@@ -1,0 +1,17 @@
+#pageTitle {
+    width: 100%;
+    padding: 2.7em;
+    background-color: var(--lightGrey);
+
+    .path {
+        color: var(--grey);
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .pageName {
+        color: var(--black);
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+}
