@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import productRouter from "./src/Routers/productRouter.js";
 import userRouter from './src/Routers/userRouter.js'
+import queryRouter from "./src/Routers/queryRouter.js";
 
 dotenv.config()
 
@@ -19,6 +20,7 @@ app.use(express.json())
 
 app.use("/product", productRouter)
 app.use("/user", userRouter)
+app.use("/query", queryRouter)
 
 
 mongoose.connect(URL).catch(err => console.log(err))

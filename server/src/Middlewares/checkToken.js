@@ -2,6 +2,11 @@ import jwt from 'jsonwebtoken'
 
 export async function CheckToken(req, res, next) {
     try {
+        if (!req.headers.authorization) {
+            res.status(406).json({ message: "Token is missing!" })
+            return 
+        }
+
         if (!req.headers.authorization.startsWith("Bearer")) {
             res.status(406).json({ message: "Token isn't valid!" })
             return
